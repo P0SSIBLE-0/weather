@@ -1,13 +1,12 @@
 
-async function getWeather(lat, long, timezone) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=28.65&longitude=77.23&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation,weathercode,surface_pressure,visibility,windspeed_10m&current_weather=true&precipitation_unit=inch&timeformat=unixtime`
+async function getWeather(lat = 28.65, long= 77.23, timezone) {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation,weathercode,surface_pressure,visibility,windspeed_10m&current_weather=true&precipitation_unit=inch&timeformat=unixtime`
     await fetch(url).then((res) => res.json())
         .then(data => updateWeather(data))
         .catch(err => console.log(err));
 }
 let timeStamp = Intl.DateTimeFormat().resolvedOptions().timeZone
 console.log(timeStamp)
-getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone)
 
 let current_temp = document.querySelector('.temp');
 let today_date = document.querySelector('.date');
@@ -38,24 +37,25 @@ if (window.navigator.geolocation) {
 }
 
 function showPosition(position) {
-    console.log("Latitude: " + position.coords.latitude +
-        "\nLongitude: " + position.coords.longitude);
+   let lat =  position.coords.latitude 
+   let long = position.coords.longitude;
+   getWeather(lat,long, Intl.DateTimeFormat().resolvedOptions().timeZone)
 }
 
 const changeIcon = (weathercode) => {
     if (weathercode === 0) {
-        weatherIcon.src = 'sun.png'
+        weatherIcon.src = 'icons/sun.png'
     } else if (weathercode <= 3) {
-        weatherIcon.src = 'cloudy.png'
+        weatherIcon.src = 'icons/cloudy.png'
 
     } else if (weathercode === 61 || weathercode === 63 || weathercode === 65 || weathercode === 66 || 67) {
-        weatherIcon.src = 'cloudy (1).png'
+        weatherIcon.src = 'icons/cloudy (1).png'
     } else if (weathercode === 71 || weathercode === 73 || weathercode === 75) {
 
     } else if (weathercode > 80) {
-        weatherIcon.src = 'rain.png'
+        weatherIcon.src = 'icons/rain.png'
     } else {
-        weatherIcon.src = 'storm.png'
+        weatherIcon.src = 'icons/storm.png'
     }
 }
 window.addEventListener('load', () => {
