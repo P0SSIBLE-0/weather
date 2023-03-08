@@ -41,6 +41,7 @@ function showPosition(position) {
    let long = position.coords.longitude;
    getWeather(lat,long, Intl.DateTimeFormat().resolvedOptions().timeZone)
 }
+getWeather(lat,long, Intl.DateTimeFormat().resolvedOptions().timeZone)
 
 const changeIcon = (weathercode) => {
     if (weathercode === 0) {
