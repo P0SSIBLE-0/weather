@@ -131,3 +131,21 @@ body {
 .date{
     margin-top: 12px;
 }
+@media screen and (width <= 500px) {
+    .weather{
+        width: 100vw;
+    }
+    .details{
+        grid-template-columns: 1fr 1fr;
+    }
+    .temp-data{
+        padding: 5px;
+        margin: 3px ;
+    }
+    .weather-info{
+        width: 87%;
+        height: 65vh;
+        gap: 0;
+
+    }
+}
