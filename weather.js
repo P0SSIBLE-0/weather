@@ -44,18 +44,18 @@ function showPosition(position) {
 
 const changeIcon = (weathercode) => {
     if (weathercode === 0) {
-        weatherIcon.src = 'icons/sun.png'
+        weatherIcon.src = 'sun.png'
     } else if (weathercode <= 3) {
-        weatherIcon.src = 'icons/cloudy.png'
+        weatherIcon.src = 'cloudy.png'
 
     } else if (weathercode === 61 || weathercode === 63 || weathercode === 65 || weathercode === 66 || 67) {
-        weatherIcon.src = 'icons/cloudy (1).png'
+        weatherIcon.src = 'cloudy (1).png'
     } else if (weathercode === 71 || weathercode === 73 || weathercode === 75) {
 
     } else if (weathercode > 80) {
-        weatherIcon.src = 'icons/rain.png'
+        weatherIcon.src = 'rain.png'
     } else {
-        weatherIcon.src = 'icons/storm.png'
+        weatherIcon.src = 'storm.png'
     }
 }
 window.addEventListener('load', () => {
