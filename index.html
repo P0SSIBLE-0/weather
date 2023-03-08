@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="container blur">
+        <div class="weather-container hide">
+            <div class="box">
+                <input type="search" name="" id="search" placeholder="Enter loaction..">
+                <button id="btn">Search</button>
+                <hr />
+                <button id="btn" class="green">Get loaction</button>
+            </div>
+        </div>
+        <div class="weather">
+            <div class="weather-container weather-info">
+                <h1 class="heading">Weather</h1>
+                <div class="hide">
+                    <input type="search" name="" id="search" class="w-75" placeholder="Search"> <button
+                        class="btn-2">Search</button>
+                </div>
+                <div class="flex cols">
+                    <div class="weather-icon"><img id="icon" src="icons/sun.png" alt="" height="60px"><span class="temp">26&deg;C</span></div>
+                    <span class="date">Mar 7 Tue </span>
+                </div>
+                <h3>weather details</h3>
+                <div class="details">
+                    <div class="temp-data">
+                        <p>Apparent temperature</p>
+                        <span data-app-temp>28&deg;</span>
+                    </div>
+                    <div class="temp-data">
+                        <p>Humidity</p>
+                        <span data-humidity>29%</span>
+                    </div>
+                    <div class="temp-data">
+                        <p>Wind</p>
+                        <span data-wind>11Km/h</span>
+                    </div>
+                    <div class="temp-data">
+                        <p>UV</p>
+                        <span>Weak</span>
+                    </div>
+                    <div class="temp-data">
+                        <p>Visibility</p>
+                        <span data-visibility>4km</span>
+                    </div>
+                    <div class="temp-data">
+                        <p>Air pressure</p>
+                        <span data-air-pressure>1012hPa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="weather.js"></script>
+
+</html>
